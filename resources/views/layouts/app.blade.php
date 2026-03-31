@@ -1,58 +1,110 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistem Pendukung Keputusan Lansia</title>
-  <link href="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css)" rel="stylesheet">
-  <link href="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css)" rel="stylesheet">
-  <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>SiLANSIA DSS</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?
+family=Playfair+Display:wght@400;600;700&
+family=DM+Sans:wght@300;400;500;600&
+family=DM+Mono:wght@400;500&
+display=swap" rel="stylesheet">
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
 </head>
-<body class="bg-light">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
-    <div class="container-fluid">
-      <button class="btn btn-outline-light me-3" id="menu-toggle"><i class="bi bi-list"></i></button>
-      <a class="navbar-brand fw-bold" href="#">SPK Bantuan Lansia</a>
-      <div class="dropdown ms-auto">
-        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
-          <i class="bi bi-person-circle"></i> Admin
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg px-4 py-3">
+
+    <!-- LOGO -->
+   <div class="nav-logo">
+    <div class="logo-mark"></div>
+    <div class="logo-text brand">
+        Si<span>LANSIA</span>
+    </div>
+</div>
+</div>
+
+    <!-- TOGGLER -->
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        ☰
+    </button>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ms-auto gap-3">
+
+    <li class="nav-item">
+        <a href="{{ url('/dashboard') }}" class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}">
+            <i data-lucide="layout-dashboard"></i> Dashboard
         </a>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Profil</a></li>
-          <li><a class="dropdown-item" href="#">Keluar</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </li>
 
-  <div class="d-flex">
-    <!-- Sidebar -->
-    <div id="sidebar" class="bg-white border-end" style="width: 240px; min-height: 100vh;">
-      <ul class="list-group list-group-flush mt-3">
-        <li><a href="/dashboard" class="list-group-item list-group-item-action"><i class="bi bi-house-door"></i> Dashboard</a></li>
-        <li><a href="/data-lansia" class="list-group-item list-group-item-action"><i class="bi bi-person-lines-fill"></i> Data Lansia</a></li>
-        <li><a href="/kriteria" class="list-group-item list-group-item-action"><i class="bi bi-bar-chart"></i> Kriteria</a></li>
-        <li><a href="/penilaian" class="list-group-item list-group-item-action"><i class="bi bi-journal-text"></i> Penilaian</a></li>
-        <li><a href="/perhitungan" class="list-group-item list-group-item-action"><i class="bi bi-calculator"></i> Perhitungan</a></li>
-        <li><a href="/hasil-prioritas" class="list-group-item list-group-item-action"><i class="bi bi-trophy"></i> Hasil Prioritas</a></li>
-        <li><a href="/penyaluran" class="list-group-item list-group-item-action"><i class="bi bi-gift"></i> Penyaluran Bantuan</a></li>
-        <li><a href="/monitoring" class="list-group-item list-group-item-action"><i class="bi bi-clipboard-data"></i> Monitoring</a></li>
-      </ul>
-    </div>
+    <li class="nav-item">
+        <a href="{{ url('/lansia') }}" class="nav-link {{ request()->is('lansia') ? 'active' : '' }}">
+            <i data-lucide="users"></i> Data Lansia
+        </a>
+    </li>
 
-    <!-- Main Content -->
-    <div class="flex-grow-1 p-4" id="page-content">
-      @yield('content')
-    </div>
-  </div>
+    <li class="nav-item">
+        <a href="{{ url('/kriteria') }}" class="nav-link {{ request()->is('kriteria') ? 'active' : '' }}">
+            <i data-lucide="sliders-horizontal"></i> Kriteria
+        </a>
+    </li>
 
-  <script src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js)"></script>
-  <script>
-    const sidebar = document.getElementById('sidebar');
-    const toggle = document.getElementById('menu-toggle');
-    toggle.addEventListener('click', () => {
-      sidebar.classList.toggle('d-none');
-    });
-  </script>
+    <li class="nav-item">
+        <a href="{{ url('/penilaian') }}" class="nav-link {{ request()->is('penilaian') ? 'active' : '' }}">
+            <i data-lucide="edit-3"></i> Penilaian
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="{{ url('/perhitungan') }}" class="nav-link {{ request()->is('perhitungan') ? 'active' : '' }}">
+            <i data-lucide="calculator"></i> Perhitungan
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="{{ url('/hasil') }}" class="nav-link {{ request()->is('hasil') ? 'active' : '' }}">
+            <i data-lucide="bar-chart-3"></i> Hasil Prioritas
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="{{ url('/bantuan') }}" class="nav-link {{ request()->is('bantuan') ? 'active' : '' }}">
+            <i data-lucide="package"></i> Penyaluran
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="{{ url('/monitoring') }}" class="nav-link {{ request()->is('monitoring') ? 'active' : '' }}">
+            <i data-lucide="activity"></i> Monitoring
+        </a>
+    </li>
+
+</ul>
+    </div>
+</nav>
+
+<!-- CONTENT -->
+<div class="container-fluid px-5 main-content">
+    @yield('content')
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
 </body>
 </html>
