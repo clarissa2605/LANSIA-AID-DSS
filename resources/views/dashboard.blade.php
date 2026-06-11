@@ -34,7 +34,7 @@
             <div class="metric-card accent-gold">
                 <div class="metric-top">
                     <i data-lucide="alert-triangle"></i>
-                    <span class="metric-badge badge-gold">Sedang</span>
+                    <span class="metric-badge badge-gold">OK</span>
                 </div>
                 <div class="metric-val">3</div>
                 <div class="metric-lbl">Prioritas Sedang</div>
