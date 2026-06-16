@@ -14,7 +14,7 @@ family=DM+Sans:wght@300;400;500;600&
 family=DM+Mono:wght@400;500&
 display=swap" rel="stylesheet">
 
-    <!-- Your Custom CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('style.css') }}">
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -24,21 +24,17 @@ display=swap" rel="stylesheet">
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg px-4 py-3">
 
-    <!-- LOGO -->
    <div class="nav-logo">
-    <div class="logo-mark"></div>
     <div class="logo-text brand">
         Si<span>LANSIA</span>
     </div>
 </div>
 </div>
 
-    <!-- TOGGLER -->
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         ☰
     </button>
-
-    <!-- MENU -->
+    
     <div class="collapse navbar-collapse" id="navbarNav">
 
       <ul class="navbar-nav ms-auto gap-3">
