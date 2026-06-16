@@ -5,7 +5,7 @@
             <div>
                 <h2 class="page-title">Penyaluran Bantuan</h2>
                 <p class="text-muted mb-0">
-                    Distribusi bantuan berdasarkan hasil prioritas
+                    Distribusi bantuan berdasarkan hasil prioritasasi lansia yang diajukan.
                 </p>
             </div>
             <button class="btn btn-dark" @click="openTambah">
